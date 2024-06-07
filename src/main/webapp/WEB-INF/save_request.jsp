@@ -26,7 +26,7 @@
 <body>
 <div class="container">
     <h1>Enter the card details</h1>
-    <form class="center-block shadow-sm p-3 mb-5 bg-body-tertiary rounded" action="${pageContext.request.contextPath}/card_info.jsp" method="post">
+    <form class="center-block shadow-sm p-3 mb-5 bg-body-tertiary rounded" action="${pageContext.request.contextPath}/request" method="post">
         <div class="mb-3">
             <label for="numberCard" class="form-label">Card number</label>
             <input type="text" class="form-control" id="numberCard" name="numberCard" aria-describedby="numberCard">

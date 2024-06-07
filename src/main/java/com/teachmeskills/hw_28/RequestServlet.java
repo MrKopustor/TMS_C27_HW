@@ -6,7 +6,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
-@WebServlet({"/card_info.jsp", "/request"})
+@WebServlet({"/request"})
 public class RequestServlet extends HttpServlet {
 
     @Override
