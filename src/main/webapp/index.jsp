@@ -5,6 +5,7 @@
     <title>JSP - Hello World</title>
 </head>
 <body>
+Today <%= new java.util.Date() %>
 <h1><%= "Hello World!" %>
 </h1>
 <br/>
