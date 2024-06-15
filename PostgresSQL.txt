@@ -1,0 +1,85 @@
+-- Table: public.person
+
+-- DROP TABLE IF EXISTS public.person;
+
+CREATE TABLE IF NOT EXISTS public.person
+(
+    name text COLLATE pg_catalog."default" NOT NULL,
+    surname text COLLATE pg_catalog."default" NOT NULL,
+    age text COLLATE pg_catalog."default" NOT NULL,
+    passport_nubmber text COLLATE pg_catalog."default" NOT NULL,
+    id bigint NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 9223372036854775807 CACHE 1 ),
+    CONSTRAINT person_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.person
+    OWNER to postgres;
+
+SELECT * FROM public.person
+ORDER BY id ASC 
+
+INSERT INTO 
+public.person (
+name, surname, age, passport_nubmber) VALUES (
+'user_2'::text, 'user_surname_2'::text, '35'::text, 'HH9392039'::text)
+ returning id;
+
+COMMIT;
+
+BEGIN;
+
+SELECT * FROM public.person
+ORDER BY id ASC 
+
+INSERT INTO 
+public.person (
+name, surname, age, passport_nubmber) VALUES (
+'user_3'::text, 'user_surname_3'::text, '14'::text, 'PO9393827'::text)
+ returning id;
+
+COMMIT;
+
+BEGIN;
+
+INSERT INTO 
+public.person (
+name, surname, age, passport_nubmber) VALUES (
+'user_4'::text, 'user_surname_4'::text, '53'::text, 'KF9372727'::text)
+ returning id; 
+
+COMMIT;
+
+BEGIN;
+
+INSERT INTO 
+public.person (
+name, surname, age, passport_nubmber) VALUES (
+'user'::text, 'user_surname'::text, '47'::text, 'EK913637'::text)
+ returning id;
+
+INSERT INTO 
+public.person (
+name, surname, age, passport_nubmber) VALUES (
+'user_5'::text, 'user_surname_5'::text, '19'::text, 'NE2726262'::text)
+ returning id;
+
+COMMIT;
+
+BEGIN;
+
+UPDATE
+public.person 
+SET
+age = '69'::text WHERE
+name = 'user';
+
+COMMIT;
+
+BEGIN;
+
+DELETE FROM public.person
+WHERE age > '50';
+
+COMMIT;
