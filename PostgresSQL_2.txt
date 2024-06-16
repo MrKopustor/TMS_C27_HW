@@ -1,0 +1,97 @@
+create table employees
+(
+employee_id integer,
+first_name varchar(20),
+last_name varchar(25) not null,
+email varchar(25) not null
+constraint emp_email_uk
+unique,
+phone_number varchar(20),
+hire_date date not null,
+salary numeric(8, 2)
+constraint emp_salary_min
+check (salary > (0)::numeric),
+commission_pct numeric(2, 2),
+department_id integer
+);
+
+
+INSERT INTO employees VALUES
+(1, 'user_1', 'user_last_name_1', 'test_email_1_@gmail.com', '+375(33)814.21.16', '11.10.2002', 6921.72, 0.5, 4),
+(2, 'user_2', 'user_last_name_2', 'test_email_2_@gmail.com', '+375(33)811.16.61', '29.8.2009', 6626.51, 0.6, 31),
+(3, 'user_3', 'user_last_name_3', 'test_email_3_@gmail.com', '+375(33)329.24.55', '20.2.1984', 1893.71, null, 76),
+(4, 'user_4', 'user_last_name_4', 'test_email_4_@gmail.com', '+375(33)629.39.94', '09.08.1993', 5687.38, 0.2, 80),
+(5, 'user_5', 'user_last_name_5', 'test_email_5_@gmail.com', '+375(29)175.24.98', '15.6.1981', 2170.91, 0.6, 60),
+(6, 'user_6', 'user_last_name_6', 'test_email_6_@gmail.com', '+375(33)822.75.68', '05.03.2003', 8125.31, null, 61),
+(7, 'user_7', 'user_last_name_7', 'test_email_7_@gmail.com', '+375(33)570.92.23', '27.11.1991', 9418.91, 0.3, 19),
+(8, 'user_8', 'user_last_name_8', 'test_email_8_@gmail.com', '+375(33)950.35.91', '13.11.2010', 9673.65, 0.3, 94),
+(9, 'user_9', 'user_last_name_9', 'test_email_9_@gmail.com', '+375(29)892.88.88', '18.2.1981', 7738.31, 0.7, 99),
+(10, 'user_10', 'user_last_name_10', 'test_email_10_@gmail.com', '+375(33)356.22.70', '17.3.1980', 7873.12, 0.5, 80),
+(11, 'user_11', 'user_last_name_11', 'test_email_11_@gmail.com', '+375(33)666.34.88', '15.8.1985', 6113.40, null, 53),
+(12, 'user_12', 'user_last_name_12', 'test_email_12_@gmail.com', '+375(33)535.19.66', '25.5.1993', 8072.29, null, 80),
+(13, 'user_13', 'user_last_name_13', 'test_email_13_@gmail.com', '+375(29)806.57.39', '15.10.2009', 6578.31, 0.3, 19),
+(14, 'user_14', 'user_last_name_14', 'test_email_14_@gmail.com', '+375(33)986.24.44', '18.3.1992', 7172.55, 0.1, 91),
+(15, 'user_15', 'user_last_name_15', 'test_email_15_@gmail.com', '+375(29)357.48.50', '19.12.1984', 4942.80, 0.6, 80),
+(16, 'user_16', 'user_last_name_16', 'test_email_16_@gmail.com', '+375(33)481.47.75', '24.6.1981', 6293.38, 0.6, 96),
+(17, 'user_17', 'user_last_name_17', 'test_email_17_@gmail.com', '+375(29)249.29.29', '02.02.2014', 1350.81, 0.7, 80),
+(18, 'user_18', 'user_last_name_18', 'test_email_18_@gmail.com', '+375(33)101.83.93', '28.2.1986', 6762.76, 0.7, 80),
+(19, 'user_19', 'user_last_name_19', 'test_email_19_@gmail.com', '+375(33)542.55.90', '09.01.2001', 8638.46, null, 80),
+(20, 'user_20', 'user_last_name_20', 'test_email_20_@gmail.com', '+375(33)158.56.75', '17.8.2005', 7748.27, 0.8, 80),
+(21, 'user_21', 'user_last_name_21', 'test_email_21_@gmail.com', '+375(29)137.38.97', '01.010.1998', 4572.17, 0.2, 12),
+(22, 'user_22', 'user_last_name_22', 'test_email_22_@gmail.com', '+375(29)563.29.33', '17.4.1981', 7894.53, 0.5, 18),
+(23, 'user_23', 'user_last_name_23', 'test_email_23_@gmail.com', '+375(29)738.15.84', '28.8.2008', 7514.79, null, 80),
+(24, 'user_24', 'user_last_name_24', 'test_email_24_@gmail.com', '+375(33)911.42.98', '28.3.2001', 2246.31, 0.8, 44),
+(25, 'user_25', 'user_last_name_25', 'test_email_25_@gmail.com', '+375(29)418.29.29', '16.3.2005', 7002.75, 0.6, 96),
+(26, 'user_26', 'user_last_name_26', 'test_email_26_@gmail.com', '+375(29)697.19.99', '21.4.1989', 8878.34, 0.5, 14),
+(27, 'user_27', 'user_last_name_27', 'test_email_27_@gmail.com', '+375(33)250.99.16', '12.11.1996', 4858.45, 0.2, 78),
+(28, 'user_28', 'user_last_name_28', 'test_email_28_@gmail.com', '+375(29)134.61.80', '10.12.1995', 6433.97, 0.3, 51),
+(29, 'user_29', 'user_last_name_29', 'test_email_29_@gmail.com', '+375(33)385.50.10', '21.1.1998', 5398.30, 0.9, 94),
+(30, 'user_30', 'user_last_name_30', 'test_email_30_@gmail.com', '+375(29)931.26.68', '07.05.1988', 8710.55, 0.9, 94),
+(31, 'user_31', 'user_last_name_31', 'test_email_31_@gmail.com', '+375(33)134.78.52', '18.12.2014', 1637.60, null, 53),
+(32, 'user_32', 'user_last_name_32', 'test_email_32_@gmail.com', '+375(29)125.11.87', '22.3.2004', 2779.71, 0.2, 80),
+(33, 'user_33', 'user_last_name_33', 'test_email_33_@gmail.com', '+375(33)184.19.52', '22.5.1996', 2834.69, 0.4, 48),
+(34, 'user_34', 'user_last_name_34', 'test_email_34_@gmail.com', '+375(33)230.89.56', '24.5.1996', 2233.32, 0.8, 80),
+(35, 'user_35', 'user_last_name_35', 'test_email_35_@gmail.com', '+375(33)982.59.24', '13.9.2001', 6234.97, 0.2, 47),
+(36, 'user_36', 'user_last_name_36', 'test_email_36_@gmail.com', '+375(33)631.27.62', '08.05.2010', 4903.96, null, 71),
+(37, 'user_37', 'user_last_name_37', 'test_email_37_@gmail.com', '+375(29)611.77.83', '21.4.2008', 3704.15, 0.6, 78),
+(38, 'user_38', 'user_last_name_38', 'test_email_38_@gmail.com', '+375(29)535.82.89', '20.7.1990', 3721.91, 0.5, 80),
+(39, 'user_39', 'user_last_name_39', 'test_email_39_@gmail.com', '+375(29)569.47.93', '28.11.2010', 7645.57, 0.2, 73),
+(40, 'user_40', 'user_last_name_40', 'test_email_40_@gmail.com', '+375(29)720.31.55', '24.5.1992', 9308.83, 0.8, 6),
+(41, 'user_41', 'user_last_name_41', 'test_email_41_@gmail.com', '+375(29)334.53.54', '29.5.1992', 9226.87, null, 54),
+(42, 'user_42', 'user_last_name_42', 'test_email_42_@gmail.com', '+375(29)217.19.80', '19.4.1986', 2256.23, null, 51),
+(43, 'user_43', 'user_last_name_43', 'test_email_43_@gmail.com', '+375(29)173.45.17', '19.9.1981', 7479.80, 0.9, 3),
+(44, 'user_44', 'user_last_name_44', 'test_email_44_@gmail.com', '+375(29)786.51.48', '07.010.1982', 2421.56, 0.6, 88),
+(45, 'user_45', 'user_last_name_45', 'test_email_45_@gmail.com', '+375(29)216.89.32', '26.2.1997', 6316.84, 0.7, 80),
+(46, 'user_46', 'user_last_name_46', 'test_email_46_@gmail.com', '+375(29)905.39.44', '05.011.1986', 8858.99, 0.8, 90),
+(47, 'user_47', 'user_last_name_47', 'test_email_47_@gmail.com', '+375(29)623.48.74', '27.10.1985', 1358.14, null, 2),
+(48, 'user_48', 'user_last_name_48', 'test_email_48_@gmail.com', '+375(33)869.60.44', '03.02.2013', 7873.73, 0.2, 80),
+(49, 'user_49', 'user_last_name_49', 'test_email_49_@gmail.com', '+375(33)200.49.39', '13.12.1980', 3779.60, 0.9, 26),
+(50, 'user_50', 'user_last_name_50', 'test_email_50_@gmail.com', '+375(29)543.59.82', '05.010.2010', 2015.80, null, 80);
+
+1. Получить список всех сотрудников из 50го отдела (department_id) с
+зарплатой(salary), большей 4000.
+select * from public.employees where department_id = 50
+and salary > 4000;
+
+2. Получить список всех сотрудников у которых последняя буква в имени равна 'a'.(взял вместо 'a' -> '5')
+select * from public.employees where first_name like '%5'
+
+3. Получить список всех сотрудников из 50го и из 80го отдела (department_id) у
+которых есть бонус (значение в колонке commission_pct не пустое).
+select * from public.employees where department_id = 50 or department_id = 80
+and commission_pct is not null;
+
+4. Получить список всех сотрудников у которых зарплата находится в промежутке
+от 8000 до 9000 (включительно).
+select * from public.employees where salary between 8000 and 9000;
+
+5. Получить список всех сотрудников заменив в значении PHONE_NUMBER все '.'
+на '-'.
+select first_name, last_name, email, replace(phone_number, '.', '-') as phone_number, hire_date, salary, commission_pct from employees;
+
+6. Сколько сотрудников которые работают в одном и том же отделе и получают
+одинаковую зарплату?
+select department_id, salary, count(*) from employees group by department_id, salary having count(*) > 1;
+
+7. Получить список сотрудников с самым длинным именем.
+select * from employees where length(first_name) = (select max(length(first_name)) from employees);
