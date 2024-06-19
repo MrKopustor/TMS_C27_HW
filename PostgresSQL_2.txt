@@ -78,7 +78,7 @@ select * from public.employees where first_name like '%5'
 
 3. Получить список всех сотрудников из 50го и из 80го отдела (department_id) у
 которых есть бонус (значение в колонке commission_pct не пустое).
-select * from public.employees where department_id = 50 or department_id = 80
+select * from public.employees where (department_id = 50 or department_id = 80)
 and commission_pct is not null;
 
 4. Получить список всех сотрудников у которых зарплата находится в промежутке
