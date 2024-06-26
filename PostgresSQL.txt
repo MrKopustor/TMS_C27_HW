@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS public.person
 (
     name text COLLATE pg_catalog."default" NOT NULL,
     surname text COLLATE pg_catalog."default" NOT NULL,
-    age text COLLATE pg_catalog."default" NOT NULL,
+    age INT COLLATE pg_catalog."default" NOT NULL,
     passport_nubmber text COLLATE pg_catalog."default" NOT NULL,
     id bigint NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 9223372036854775807 CACHE 1 ),
     CONSTRAINT person_pkey PRIMARY KEY (id)
